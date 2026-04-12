@@ -1,4 +1,4 @@
-# 🤖 AI Assistant — Local Roleplay Chatbot
+# Local Roleplay
 
 A fully offline AI assistant running on your PC, powered by local GGUF models, a Flask API backend, and a Windows Forms frontend.
 
@@ -93,83 +93,6 @@ C:\Program Files\AIAssistant\assistant.db
 | `chat_history` | All past conversations |
 | `rules` | Roleplay rules for the AI |
 | `main_memory` | Long-term facts the AI remembers |
-
-You can edit the database with any free tool like [DB Browser for SQLite](https://sqlitebrowser.org/).
-
----
-
-## 🌐 Hosting on Your Website
-
-If you want users to download and install via your website:
-
-1. **Build the installer** (see Developer section below)
-2. **Upload** `AIAssistant_Setup.exe` to your web server or GitHub Releases
-3. **Link** to it from your website:
-```html
-<a href="https://yoursite.com/downloads/AIAssistant_Setup.exe">
-  Download AI Assistant
-</a>
-```
-4. Optionally host `models.json` on your server/GitHub so the model list can be updated without reinstalling.
-
-> ⚠️ Note: Windows Defender SmartScreen will warn about unsigned installers. To remove this warning you need a **code signing certificate** (~$200/year from DigiCert, Sectigo, etc.) or upload to GitHub Releases which builds trust over time.
-
----
-
-## 🔧 Developer Setup
-
-### Prerequisites
-```bash
-pip install flask llama-cpp-python
-# For NSIS installer build:
-# Download NSIS from https://nsis.sourceforge.io/
-```
-
-### Run the server manually
-```bash
-cd backend
-python server.py
-```
-
-### Build the installer
-1. Install [NSIS](https://nsis.sourceforge.io/Download)
-2. Place your app files in the correct directories (see project structure above)
-3. Run:
-```bash
-makensis installer\installer.nsi
-```
-This produces `AIAssistant_Setup.exe`.
-
-### API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/chat` | POST | Send a message, stream response |
-| `/personality` | GET/POST | View/update character |
-| `/rules` | GET/POST/DELETE | Manage roleplay rules |
-| `/memory` | GET/POST/DELETE | Manage long-term memory |
-| `/history/clear` | POST | Clear chat history |
-
----
-
-## 📁 Project Structure
-
-```
-AIAssistant/
-├── backend/
-│   └── server.py            ← Flask API (SQLite)
-├── scripts/
-│   └── model_downloader.py  ← GUI model downloader
-├── models_list/
-│   └── models.json          ← Model catalog
-├── models/                  ← Downloaded .gguf files go here
-├── installer/
-│   └── installer.nsi        ← NSIS installer script
-├── frontend/
-│   └── Form1.cs             ← C# WinForms chat UI
-├── assistant.db             ← SQLite database (created on first run)
-└── launch_config.txt        ← Written by model downloader
-```
 
 ---
 
