@@ -1,0 +1,162 @@
+body{
+    background-color: rgb(15, 15, 15);
+}
+
+
+.name{
+    font-size: 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transform: translate(25px, 30px);
+    color: white;
+}
+
+.bb{
+    width: 100px;
+    transform: translate(10px, 10px);
+    transition: transform 0.3s;
+    cursor: pointer;
+
+}
+
+.bb:hover{
+    transform: translate(10px, 10px) scale(1.1);
+}
+
+.headline{
+    font-size: 30px;
+    transform: translate(50px, 20px);
+    color: white;
+}
+
+.subtext{
+    transform: translate(50px, 50px);
+    color: white;
+    
+}
+.download_link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    transform: translate(-500px, 100px);
+    border-radius: 10px;
+    background-color: black;
+    width: 160px;
+    height: 35px;
+    padding: 2px;
+    transition: transform 0.3s ease;
+}
+
+.download_link:hover{
+    transform: translate(-500px, 100px) scale(1.1);
+    
+}
+
+.download_link a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    transform: translate(-320px, 60px);
+    border-radius: 10px;
+    width: 115px;
+    height: 35px;
+    padding: 2px;
+    background-color: white;
+    border: 2px solid black;
+    transition: transform 0.3s ease;
+
+}
+
+
+.check:hover{
+    transform: translate(-320px, 60px) scale(1.1);
+    
+}
+.check a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+.nav{
+    width: 85%;
+    margin: auto;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translate(650px, -460px);
+}
+
+.nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.nav ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    transition: 0.5s;
+}
+
+.nav ul li:hover::after{
+    width: 100%;
+}
+
+.place_holder{
+    transform: translate(600px, -350px);
+}
+
+.place_holder img{
+    border-radius: 15px;
+    border: 5px solid black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.place_holder img:hover{
+    transform: scale(1.1);
+    cursor: default;
+}
+
+.footer ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+    transform: translate(1px, -250px);
+    color: white;
+
+    
+
+}
+
+.footer ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+}
